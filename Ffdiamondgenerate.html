@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Diamond Generator | Get Unlimited Diamonds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #ff6b00;
+            --secondary: #ffd166;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #ffffff;
+            --accent: #00a8ff;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(10, 10, 20, 0.9);
+            padding: 15px 5%;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 5% 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.postimg.cc/1tzWpDK4/free-fire-gameloop-FF-1-1.png') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 209, 102, 0.8);
+            }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #ccc;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.6);
+        }
+
+        /* Generator Section */
+        .generator {
+            padding: 100px 5%;
+            background: rgba(15, 15, 30, 0.7);
+            margin: 50px 5%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .generator::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+        }
+
+        .generator h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--secondary);
+        }
+
+        .generator-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(20, 20, 40, 0.8);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--secondary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background: rgba(30, 30, 50, 0.8);
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            border-radius: 10px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
+        }
+
+        .diamond-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .diamond-option {
+            background: rgba(30, 30, 50, 0.8);
+            border: 2px solid rgba(255, 107, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .diamond-option:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .diamond-option.selected {
+            border-color: var(--secondary);
+            background: rgba(255, 209, 102, 0.1);
+        }
+
+        .diamond-option i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 10px;
+            color: var(--dark);
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .generate-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .generate-btn:hover::before {
+            width: 100%;
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.4);
+        }
+
+        /* Process Animation */
+        .process-container {
+            display: none;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(30, 30, 50, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: var(--light);
+            transition: 0.5s;
+        }
+
+        .process-step.active .step-icon {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: var(--dark);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+        }
+
+        .step-text {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .process-step.active .step-text {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .process-complete {
+            display: none;
+            background: rgba(20, 20, 40, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .process-complete h3 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .process-complete p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .telegram-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0088cc;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .telegram-btn:hover {
+            background: #0077b5;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(20, 20, 40, 0.8);
+            padding: 40px 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .feature-card p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 20, 0.9);
+            padding: 60px 5% 30px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p, .footer-column a {
+            color: #aaa;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--primary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-gem"></i>
+                <h1>Free Fire Diamond Generator</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#generator">Generator</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h2>Get Unlimited Free Fire Diamonds & Gold</h2>
+        <p>Generate diamonds and gold for Free Fire instantly with our advanced generator. No surveys, no downloads, completely safe and secure!</p>
+        <a href="#generator" class="cta-button">Generate Now <i class="fas fa-arrow-right"></i></a>
+    </section>
+
+    <!-- Generator Section -->
+    <section class="generator" id="generator">
+        <h2>Diamond Generator</h2>
+        <div class="generator-form">
+            <div class="form-group">
+                <label for="uid">Enter Your Free Fire UID</label>
+                <input type="text" id="uid" class="form-control" placeholder="e.g., 1234567890">
+            </div>
+            
+            <div class="form-group">
+                <label>Select Diamonds</label>
+                <div class="diamond-options">
+                    <div class="diamond-option" data-value="100">
+                        <i class="fas fa-gem"></i>
+                        <div>100 Diamonds</div>
+                    </div>
+                    <div class="diamond-option" data-value="500">
+                        <i class="fas fa-gem"></i>
+                        <div>500 Diamonds</div>
+                    </div>
+                    <div class="diamond-option" data-value="1000">
+                        <i class="fas fa-gem"></i>
+                        <div>1000 Diamonds</div>
+                    </div>
+                    <div class="diamond-option" data-value="2000">
+                        <i class="fas fa-gem"></i>
+                        <div>2000 Diamonds</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="gold">Select Gold Amount</label>
+                <select id="gold" class="form-control">
+                    <option value="1000">1000 Gold</option>
+                    <option value="5000">5000 Gold</option>
+                    <option value="10000">10000 Gold</option>
+                    <option value="20000">20000 Gold</option>
+                </select>
+            </div>
+            
+            <button class="generate-btn" id="generate-btn">
+                <i class="fas fa-bolt"></i> Generate Diamonds
+            </button>
+            
+            <!-- Process Animation -->
+            <div class="process-container" id="process-container">
+                <div class="process-steps">
+                    <div class="process-step active" id="step1">
+                        <div class="step-icon"><i class="fas fa-cog"></i></div>
+                        <div class="step-text">Preparing</div>
+                    </div>
+                    <div class="process-step" id="step2">
+                        <div class="step-icon"><i class="fas fa-search"></i></div>
+                        <div class="step-text">Checking Account</div>
+                    </div>
+                    <div class="process-step" id="step3">
+                        <div class="step-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="step-text">Generating</div>
+                    </div>
+                    <div class="process-step" id="step4">
+                        <div class="step-icon"><i class="fas fa-check"></i></div>
+                        <div class="step-text">Complete</div>
+                    </div>
+                </div>
+                
+                <div class="process-complete" id="process-complete">
+                    <h3>Diamonds Generated Successfully!</h3>
+                    <p>To receive your diamonds in your Free Fire account, complete the simple verification task on our Telegram channel.</p>
+                    <a href="https://t.me/Verificationoffer_bot/verification" class="telegram-btn">
+                        <i class="fab fa-telegram"></i> Join Telegram Channel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Why Choose Our Generator</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>100% Safe & Secure</h3>
+                <p>Our generator uses advanced encryption to ensure your account remains safe. No risk of bans or suspensions.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Instant Delivery</h3>
+                <p>Get your diamonds and gold instantly after completing the simple verification process. No waiting required.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>
+                <h3>Unlimited Usage</h3>
+                <p>Generate as many diamonds and gold as you need. No limits, no restrictions. Use our generator daily!</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <h3>No Surveys</h3>
+                <p>We don't ask you to complete annoying surveys or download suspicious apps. Just simple verification.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile Friendly</h3>
+                <p>Our generator works perfectly on all devices - desktop, tablet, and mobile. Generate diamonds anywhere!</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Our support team is available 24/7 to help you with any issues or questions about the generator.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Free Fire Diamond Generator</h3>
+                <p>The most advanced and secure diamond generator for Free Fire. Get unlimited diamonds and gold instantly.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#generator">Generator</a>
+                <a href="#features">Features</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="#">Help Center</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> insightimaginary@gmail.com</p>
+                <p><i class="fas fa-globe"></i> Have A Great Day😊 </p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy;  Made By Rhythm.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Diamond option selection
+        document.querySelectorAll('.diamond-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.diamond-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                this.classList.add('selected');
+            });
+        });
+
+        // Generate button functionality
+        document.getElementById('generate-btn').addEventListener('click', function() {
+            const uid = document.getElementById('uid').value;
+            const selectedDiamond = document.querySelector('.diamond-option.selected');
+            
+            if (!uid) {
+                alert('Please enter your Free Fire UID');
+                return;
+            }
+            
+            if (!selectedDiamond) {
+                alert('Please select a diamond amount');
+                return;
+            }
+            
+            // Show process container
+            document.getElementById('process-container').style.display = 'block';
+            
+            // Simulate process steps
+            simulateProcess();
+        });
+
+        // Process simulation
+        function simulateProcess() {
+            const steps = document.querySelectorAll('.process-step');
+            const completeDiv = document.getElementById('process-complete');
+            
+            // Reset steps
+            steps.forEach(step => step.classList.remove('active'));
+            
+            // Step 1
+            steps[0].classList.add('active');
+            
+            // Step 2 after delay
+            setTimeout(() => {
+                steps[1].classList.add('active');
+            }, 1500);
+            
+            // Step 3 after delay
+            setTimeout(() => {
+                steps[2].classList.add('active');
+            }, 3000);
+            
+            // Step 4 after delay
+            setTimeout(() => {
+                steps[3].classList.add('active');
+            }, 4500);
+            
+            // Show complete message
+            setTimeout(() => {
+                completeDiv.style.display = 'block';
+            }, 6000);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
